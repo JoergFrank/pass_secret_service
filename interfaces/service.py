@@ -77,7 +77,7 @@ class Service(object):
     def OpenSession(self, algorithm, input):
         if algorithm != 'plain':
             raise DBusNotSupported('only algorithm plain is implemented')
-        output = GLib.Variant('i', 0)
+        output = GLib.Variant('s', '')
         new_session = Session(self.bus)
         result = new_session.path
         return output, result
@@ -92,29 +92,29 @@ class Service(object):
  
     @debug_me
     def SearchItems(self, attributes):
-        unlocked = None
-        locked = None
+        unlocked = []
+        locked = []
         return unlocked, locked
 
     @debug_me
     def Unlock(self, objects):
-        unlocked = None
-        prompt = None
-        return unlocked, promt
+        unlocked = []
+        prompt = '/'
+        return unlocked, prompt
  
     @debug_me
     def Lock(self, objects):
-        locked = None
-        prompt = None
+        locked = []
+        prompt = '/'
         return locked, prompt
     @debug_me
     def GetSecrets(self, items, session):
-        secrets = None
+        secrets = {}
         return secrets
  
     @debug_me
     def ReadAlias(self, name):
-        collection = None
+        collection = '/'
         return collection
  
     @debug_me
