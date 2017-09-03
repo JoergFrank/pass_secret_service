@@ -21,7 +21,7 @@ class Collection(object):
           </method>
           <method name='CreateItem'>
             <arg type='a{sv}' name='properties' direction='in'/>
-            <arg type='o' name='secret' direction='in'/>
+            <arg type='(oayays)' name='secret' direction='in'/>
             <arg type='b' name='replace' direction='in'/>
             <arg type='o' name='item' direction='out'/>
             <arg type='o' name='prompt' direction='out'/>
@@ -54,7 +54,8 @@ class Collection(object):
     @debug_me
     def Delete(self):
         self.pub_ref.unregister()
-        #TODO actually delete
+        # TODO actually delete
+        # TODO signal deletion
         prompt = "/"
         return prompt
 

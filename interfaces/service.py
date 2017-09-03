@@ -44,7 +44,7 @@ class Service(object):
           <method name='GetSecrets'>
             <arg type='ao' name='items' direction='in'/>
             <arg type='o' name='session' direction='in'/>
-            <arg type='a{oo}' name='secrets' direction='out'/>
+            <arg type='a{o(oayays)}' name='secrets' direction='out'/>
           </method>
           <method name='ReadAlias'>
             <arg type='s' name='name' direction='in'/>
@@ -87,6 +87,7 @@ class Service(object):
         new_collection = Collection(self.bus, 'test1')
         collection = new_collection.path
         prompt = '/'
+        # TODO Signal Collection created
         return collection, prompt
  
     @debug_me
